@@ -123,7 +123,6 @@ function performCalculation() {
       /* nothing to do */
     } else {
       const result = eval(calcuPreview.value);
-
       if (Math.abs(result) >= 1e12) {
         ansPreview.value = result.toExponential();
       } else {
@@ -157,3 +156,13 @@ function changeValueInParentheses(newValue) {
     return updatedValue;
   }
 }
+
+setInterval(() => {
+  if (ansPreview.value === "Error") {
+    ansPreview.style.transition = "border-color 0ms ease";
+    ansPreview.style.borderColor = "#ff0000";
+  } else {
+    ansPreview.style.transition = "border-color 0.5s ease";
+    ansPreview.style.borderColor = "#565656";
+  }
+}, 100);
