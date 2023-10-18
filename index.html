@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="preview">
+        <div>
+          <label for="calculation-preview" id="input-label">JCFcodex</label>
+          <input
+            type="text"
+            id="calculation-preview"
+            spellcheck="false"
+            autocomplete="off"
+            aria-hidden="true"
+            disabled
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="answer-preview"
+            spellcheck="false"
+            autocomplete="off"
+            placeholder="Answer"
+            aria-hidden="true"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button tertiary" value="AC" onclick="clearScreen();">
+          AC
+        </button>
+        <button class="button tertiary" value="-" onclick="changeSigns()">
+          +/-
+        </button>
+        <button class="button tertiary" onclick="del();">del</button>
+        <button class="button primary" value="/" onclick="operator(this.value)">
+          &divide;
+        </button>
+        <button
+          class="button tertiary"
+          value="7"
+          onclick="
+          input(this.value);
+          "
+        >
+          7
+        </button>
+        <button
+          class="button tertiary"
+          value="8"
+          onclick="
+          input(this.value);"
+        >
+          8
+        </button>
+        <button
+          class="button tertiary"
+          value="9"
+          onclick="
+          input(this.value);"
+        >
+          9
+        </button>
+        <button class="button primary" value="*" onclick="operator(this.value)">
+          &times;
+        </button>
+        <button
+          class="button tertiary"
+          value="4"
+          onclick="
+          input(this.value);"
+        >
+          4
+        </button>
+        <button
+          class="button tertiary"
+          value="5"
+          onclick="
+          input(this.value);"
+        >
+          5
+        </button>
+        <button
+          class="button tertiary"
+          value="6"
+          onclick="
+          input(this.value);"
+        >
+          6
+        </button>
+        <button class="button primary" value="-" onclick="operator(this.value)">
+          &minus;
+        </button>
+        <button
+          class="button tertiary"
+          value="1"
+          onclick="
+          input(this.value);"
+        >
+          1
+        </button>
+        <button
+          class="button tertiary"
+          value="2"
+          onclick="
+          input(this.value);"
+        >
+          2
+        </button>
+        <button
+          class="button tertiary"
+          value="3"
+          onclick="
+          input(this.value);"
+        >
+          3
+        </button>
+        <button class="button primary" value="+" onclick="operator(this.value)">
+          &plus;
+        </button>
+        <button
+          class="button tertiary"
+          value="."
+          onclick="
+        if(!calcuPreview.value.endsWith('.') ) {
+          input(this.value);
+        }"
+        >
+          .
+        </button>
+        <button
+          class="button tertiary"
+          value="0"
+          onclick="
+          if(calcuPreview.value !== '') {
+            /* nothing to do */if(calcuPreview.value === 0) {
+              input(this.value);
+
+            }else {
+              input(this.value);
+            }
+          }
+            
+          
+          "
+        >
+          0
+        </button>
+        <button
+          class="button secondary"
+          id="equal"
+          onclick="performCalculation();"
+        >
+          =
+        </button>
+      </div>
+    </div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

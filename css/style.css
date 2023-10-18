@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  min-height: 100vh;
+  max-width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(90deg, #333, #565656);
+}
+
+.calculator {
+  background-color: #1b1b1b;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 3rem 1rem 1rem;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px #1b1b1b, 0 0 25px #1b1b1b, 0 0 50px #1b1b1b,
+    0 0 100px #1b1b1b;
+}
+
+/* Title */
+.title {
+  color: #333;
+  text-align: center;
+}
+
+/* screen preview */
+.preview {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+.preview div:first-of-type {
+  position: relative;
+}
+#calculation-preview,
+#answer-preview {
+  text-align: right;
+  background-color: transparent;
+}
+#calculation-preview {
+  font-size: auto;
+  color: #565656;
+  border: 1px solid #1b544a;
+}
+
+#calculation-preview::placeholder {
+  text-align: center;
+}
+#answer-preview {
+  color: #fff;
+  border: 1px solid #565656;
+}
+
+#input-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #565656;
+  background-color: #1b1b1b;
+  border-radius: 24px;
+
+  transition: top 0.25s ease, padding 0.5s ease;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+/*   text-overflow: ellipsis;
+  direction: rtl; */
+  overflow: hidden;
+}
+
+/* buttons */
+.buttons {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.button {
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.primary {
+  background-color: #1b544a;
+}
+.primary:active {
+  background-color: #1b544995;
+}
+.secondary {
+  background-color: #1cdab8;
+}
+.secondary:active {
+  background-color: #1cdab895;
+}
+.tertiary {
+  background: linear-gradient(90deg, #333, #565656);
+}
+.tertiary:active {
+  background: linear-gradient(90deg, #33333395, #56565695);
+}
+
+#equal {
+  grid-column: span 2;
+}
+
+@media (min-width: 512px) {
+  #answer-preview {
+    font-size: 1.5rem;
+  }
+}
