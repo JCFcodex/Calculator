@@ -1,2 +1,4 @@
 # Calculator
--- https://jcfcodex.github.io/Calculator/
+visit site: https://jcfcodex.github.io/Calculator/
+
+-- JCFcodex💻
