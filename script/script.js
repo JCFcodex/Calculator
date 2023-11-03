@@ -166,3 +166,9 @@ setInterval(() => {
     ansPreview.style.borderColor = "#565656";
   }
 }, 100);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Backspace" || event.keyCode === 8) {
+    del();
+    } 
+});
